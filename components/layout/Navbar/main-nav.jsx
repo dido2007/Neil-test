@@ -12,7 +12,7 @@ export function MainNav({ items }) {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="flex items-center space-x-2">
-        <Image src={"/icon_nav.png"} width={75} height={75} className="h-9 w-9" />
+        <Image src={"/icon_nav.png"} width={75} height={75} className="h-9 w-9" alt="Logo of ChatFleet application, website" />
         <span className="hidden sm:inline-block font-bold">{siteConfig.name}</span>
       </Link>
       {items?.length ? (

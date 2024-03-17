@@ -8,6 +8,7 @@ export function Video() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        title="Demo video of ChatFleet application in action"
       ></iframe>
     </div>
   );
