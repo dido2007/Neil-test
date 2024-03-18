@@ -5,8 +5,8 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma"; // Ajustez le chemin d'accès en fonction de votre structure
 import authConfig from "@/auth.config";
 
-const githubId = "2953f957eefea8a3a1e3";
-const githubSecret = "b36346ab03a5259582647e4b11805f9aeac03967";
+const githubId = "bb655092a16ce5d1c2a4";
+const githubSecret = "9e80a56d52881bf643565688c9818aba0dc63351";
 
 
 if (!githubId || !githubSecret) {

@@ -11,6 +11,10 @@ export const siteConfig = {
     {
       title: "Pricing",
       href: "/pricing",
+    },
+    {
+      title: "Waitlist",
+      href: "/waitlist",
     }
   ],
   links: {

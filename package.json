@@ -38,7 +38,7 @@
     "react-dom": "^18",
     "react-lottie": "^1.2.4",
     "sonner": "^1.4.3",
-    "tailwind-merge": "^2.2.1",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.162.0",
     "three-globe": "^2.31.0"
