@@ -9,6 +9,8 @@ import {
 import { Check } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
+import Link from "next/link";
 
 export const PricingCard = () => {
     const name = "FREE";
@@ -34,7 +36,7 @@ export const PricingCard = () => {
         <CardContent>
           <div className="flex justify-center">
             <span className="mb-3 text-3xl font-extrabold text-primary-500">
-              1.00 DT
+              7$
             </span>
             <span className="text-2xl font-bold text-primary-500">/mo</span>
           </div>
@@ -68,10 +70,11 @@ export const PricingCard = () => {
           </ul>
         </CardContent>
         <CardFooter className='flex justify-center'>
+          <Link href='/waitlist'>
             <Button variant='default' size='lg'>
                 Get started
             </Button>
-
+          </Link>
         </CardFooter>
       </Card>
 
@@ -88,12 +91,13 @@ export const PricingCard = () => {
         </div>
         <CardContent>
           <div className="flex justify-center mb-3">
-            <span className="text-3xl font-extrabold text-primary-500">
-              350 DT
+            {/* <span className="text-3xl font-extrabold text-primary-500">
+              ??
             </span>
-            <span className="text-2xl font-bold text-primary-500">/mo</span>
+            <span className="text-2xl font-bold text-primary-500">/mo</span> */}
+            <Skeleton className="h-8 w-[125px]" />
           </div>
-          <ul role="list" className="mb-8 space-y-4 text-left">
+          {/* <ul role="list" className="mb-8 space-y-4 text-left">
             <li className="flex items-center space-x-3">
              < Check className="w-5 h-5 text-green-500" />
               <span>Individual configuration</span>
@@ -120,13 +124,18 @@ export const PricingCard = () => {
                 Free updates: <span className="font-semibold">6 months</span>
               </span>
             </li>
-          </ul>
+          </ul> */}
+          <div className="flex justify-center">
+          <Skeleton className=" h-[220px] w-[350px] rounded-xl" />
+          </div>
         </CardContent>
         <CardFooter className='flex justify-center'>
-            <Button variant='default' size='lg'>
-                Get started
-            </Button>
+        <Link href='/waitlist'>
 
+            <Button variant='default' size='lg'>
+                Coming Soon
+            </Button>
+        </Link>
         </CardFooter>
         
       </Card>

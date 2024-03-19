@@ -4,6 +4,8 @@ import {Providers} from "./providers";
 import { SiteHeader } from "@/components/layout/Navbar/site-header";
 import { TailwindIndicator } from "@/components/layout/Navbar/tailwind-indicator";
 import { ThemeProvider } from "@/components/layout/Navbar/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
+
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: ["400", "600"] })
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
             </div>
             <TailwindIndicator />
           </ThemeProvider>
+          <Toaster />
         </Providers>
         </body>
     </html>

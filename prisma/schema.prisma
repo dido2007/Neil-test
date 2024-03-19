@@ -6,23 +6,23 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  
-  access_token       String?  
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -38,17 +38,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String     @id @default(cuid())
   name          String?
-  email         String?   @unique
-  phoneNumber  String?    @unique
+  email         String?    @unique
+  phoneNumber   String?    @unique
   emailVerified DateTime?
   image         String?
-  status        String    @default("FREE")
+  status        String     @default("FREE")
   accounts      Account[]
   sessions      Session[]
-  orders          Order[]
-  boutiques       Boutique[]
+  orders        Order[]
+  boutiques     Boutique[]
 }
 
 model VerificationToken {
@@ -60,39 +60,44 @@ model VerificationToken {
 }
 
 model Boutique {
-  id              String     @id @default(cuid())
-  name            String
-  description     String?
-  ownerId         String
-  owner           User       @relation(fields: [ownerId], references: [id])
-  products        Product[]
-  orders          Order[]
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  ownerId     String
+  owner       User      @relation(fields: [ownerId], references: [id])
+  products    Product[]
+  orders      Order[]
 }
 
-
-
 model Product {
-  id             String   @id @default(cuid())
-  name           String
-  description    String?
-  amount         Float
-  deliveryFee    Float
-  available      Boolean  @default(true)
-  boutiqueId     String
-  boutiqueFrom   Boutique @relation(fields: [boutiqueId], references: [id])
-  orders Order[]
-
+  id           String   @id @default(cuid())
+  name         String
+  description  String?
+  amount       Float
+  deliveryFee  Float
+  available    Boolean  @default(true)
+  boutiqueId   String
+  boutiqueFrom Boutique @relation(fields: [boutiqueId], references: [id])
+  orders       Order[]
 }
 
 model Order {
-  id            String   @id @default(cuid())
-  amount        Float
-  deliveryFee   Float
-  status        String   @default("PENDING")
-  productId     String
-  product       Product  @relation(fields: [productId], references: [id])
-  boutiqueId    String
-  boutiqueTo    Boutique @relation(fields: [boutiqueId], references: [id])
-  buyerId       String
-  buyer         User     @relation(fields: [buyerId], references: [id])
+  id          String   @id @default(cuid())
+  amount      Float
+  deliveryFee Float
+  status      String   @default("PENDING")
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  boutiqueId  String
+  boutiqueTo  Boutique @relation(fields: [boutiqueId], references: [id])
+  buyerId     String
+  buyer       User     @relation(fields: [buyerId], references: [id])
 }
+
+model WaitList {
+  id        String   @id @default(cuid())
+  name      String
+  email     String  @unique
+  createdAt DateTime @default(now())
+}
+

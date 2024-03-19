@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/layout/Navbar/main-nav"
 import { ThemeToggle } from "@/components/layout/Navbar/theme-toggle"
 import { LoginNav } from "./LoginWraper"
+import { Instagram } from 'lucide-react';
 import { LogoutButton } from "@/components/auth/LogoutButton"
 
 export function SiteHeader() {
@@ -31,8 +32,8 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <Link
-              href={siteConfig.links.twitter}
+            {/* <Link
+              href={siteConfig.links.instagram}
               target="_blank"
               rel="noreferrer"
             >
@@ -42,10 +43,10 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
-                <Icons.twitter className="h-5 w-5 fill-current" />
+                <Instagram className="h-5 w-5 fill-current" />
                 <span className="sr-only">Twitter</span>
               </div>
-            </Link>
+            </Link> */}
               </div>
             <ThemeToggle />
           <LoginNav />
