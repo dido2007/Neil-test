@@ -1,9 +1,11 @@
 import { getCustomer } from "@/actions/customer/customer.actions";
 import { LogoutButton } from "./LogoutButton";
-import { getAuthSession, isPremiumUser, userPhoneNumber } from "@/lib/auth";
+import { auth } from "@/auth";
+import { getAuthSession } from "@/lib/auth";
 
 export const User = async () => {
   const session = await getAuthSession();
+  
   console.log(session);
   return (
       <div className="min-h-screen bg-gray-100 flex justify-center items-center">      <div className="card w-96 bg-white shadow-xl">

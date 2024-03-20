@@ -10,13 +10,15 @@ import { getAuthSession } from "@/lib/auth";
 export default async function Home() {
   const session = await getAuthSession();
 
-  // if (session) {
-  //   return (
-  //     <div className="">
-  //       <User />
-  //     </div>
-  //   );
-  // }
+  console.log(session);
+
+  if (session) {
+    return (
+      <div className="">
+        <User />
+      </div>
+    );
+  }
   return (
     <div className="md:mx-12 ">
       {" "}
